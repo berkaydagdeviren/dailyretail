@@ -110,13 +110,13 @@ const RetailTracking = () => {
 
   return (
     <div className="retail-tracking">
-      <h2>Retail Tracking</h2>
+      <h2>İrsaliye Takip</h2>
       <form onSubmit={handleSubmit}>
         <Select
           value={selectedCompany}
           onChange={setSelectedCompany}
           options={companies}
-          placeholder="Select a Company"
+          placeholder="Firma Seç"
         />
         {selectedCompany && (
           <>
@@ -124,7 +124,7 @@ const RetailTracking = () => {
               isMulti
               onChange={handleAddProduct}
               options={products}
-              placeholder="Select Products"
+              placeholder="Ürünleri Seç"
             />
             {selectedProducts.map((product, index) => (
 
@@ -136,6 +136,7 @@ const RetailTracking = () => {
                   onChange={(e) => updateProductDetails(index, 'quantity', parseInt(e.target.value))}
                   required
                   min="1"
+                  placeholder='Miktar'
                 />
                 <input
                   type="text"
@@ -148,7 +149,7 @@ const RetailTracking = () => {
                     type="checkbox"
                     checked={product.isDifferentPrice}
                     onChange={(e) => updateProductDetails(index, 'isDifferentPrice', e.target.checked)}
-                  /> Different price?
+                  /> Farklı Fiyat?
                 </div>
                 {product.isDifferentPrice && (
                   <div>
@@ -158,14 +159,14 @@ const RetailTracking = () => {
                       value="white"
                       checked={product.priceColor === 'white'}
                       onChange={(e) => updateProductDetails(index, 'priceColor', e.target.value)}
-                    /> White
+                    /> Beyaz
                     <input
                       type="radio"
                       name={`priceColor-${index}`}
                       value="black"
                       checked={product.priceColor === 'black'}
                       onChange={(e) => updateProductDetails(index, 'priceColor', e.target.value)}
-                    /> Black
+                    /> Siyah
                   </div>
                 )}
                 <button type="button" onClick={() => handleRemoveProduct(index)}>X</button>
@@ -173,7 +174,7 @@ const RetailTracking = () => {
                 {validationErrors[`price-${index}`] && <div style={{ color: 'red' }}>{validationErrors[`price-${index}`]}</div>}
               </div>
             ))}
-            <button type="submit">Submit Sale</button>
+            <button type="submit">İrsaliye Kaydet</button>
           </>
         )}
       </form>
@@ -191,7 +192,7 @@ const RetailTracking = () => {
                 {
               sale.itemsSold.length > 0 ? sale.itemsSold.map((item, itemIndex) => <span key={`${sale.itemIndex}-${itemIndex}`}>{`${item.itemName} - Quantity: ${item.quantity}, Price: ${item.price || 'N/A'}`}</span>).reduce((acc, curr, index, array) => index < array.length - 1 ? [...acc, curr, ', '] : [...acc, curr], []) : "No items sold"
               }</p>
-              <button onClick={() => deleteSale(sale._id)}>Delete Sale</button>
+              <button onClick={() => deleteSale(sale._id)}>İrsaliye Sil</button>
               <Link to={`/edit-sale/${sale._id}`}></Link>
             </div>
           ))

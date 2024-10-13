@@ -17,14 +17,14 @@ function App() {
       <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <ul className="navbar-nav mr-auto">
-            <li className="nav-item"><Link to="/" className="nav-link">Home</Link></li>
-            <li className="nav-item"><Link to="/login" className="nav-link">Login</Link></li>
-            <li className="nav-item"><Link to="/register" className="nav-link">Register</Link></li>
-            <li className="nav-item"><Link to="/dashboard" className="nav-link">Dashboard</Link></li>
-            <li className="nav-item"><Link to="/retail-tracking" className="nav-link">Retail Tracking</Link></li>
-            <li className="nav-item"><Link to="/download" className="nav-link">Download Retail Data</Link></li>
-            <li className="nav-item"><Link to="/company-upload" className="nav-link">Upload Company Data</Link></li>
-            <li className="nav-item"><Link to="/product-upload" className="nav-link">Upload Product Data</Link></li>
+            <li className="nav-item"><Link to="/" className="nav-link">Ev</Link></li>
+            <li className="nav-item"><Link to="/login" className="nav-link">Giriş Yap</Link></li>
+            <li className="nav-item"><Link to="/register" className="nav-link">Kayıt Ol</Link></li>
+            <li className="nav-item"><Link to="/dashboard" className="nav-link">Menü</Link></li>
+            <li className="nav-item"><Link to="/retail-tracking" className="nav-link">İrsaliye Takip</Link></li>
+            <li className="nav-item"><Link to="/download" className="nav-link">İrsaliye Kaydı İndir</Link></li>
+            <li className="nav-item"><Link to="/company-upload" className="nav-link">Firma Güncelle</Link></li>
+            <li className="nav-item"><Link to="/product-upload" className="nav-link">Ürün Güncelle</Link></li>
           </ul>
         </nav>
         <Routes>
